@@ -2,6 +2,23 @@
   padding: 16px 16px 24px;
 }
 
+/* Con acciones abajo: la página ocupa al menos toda la pantalla para que
+   los botones queden siempre en el borde inferior. */
+.withActions {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - env(safe-area-inset-top));
+  padding-bottom: 0;
+}
+
+.withActions > .back {
+  align-self: flex-start;
+}
+
+.body {
+  flex: 1;
+}
+
 .title {
   margin: 0 0 16px;
   font-size: 28px;

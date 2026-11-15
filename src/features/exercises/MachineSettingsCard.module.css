@@ -1,0 +1,67 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.saved {
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px 8px;
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+.label {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.value,
+.notes {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+}
+
+.value {
+  min-height: 36px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.value::placeholder,
+.notes::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.notes {
+  min-height: 40px;
+  padding: 0 4px;
+  font-size: 16px;
+}

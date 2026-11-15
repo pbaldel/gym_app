@@ -90,6 +90,15 @@ export async function updateExercise(
   })
 }
 
+/** Guarda solo los ajustes de máquina (edición en línea desde la pantalla de registro). */
+export async function saveMachineSettings(
+  exerciseId: Id,
+  fields: MachineSettingsFields,
+  now: number = Date.now(),
+): Promise<void> {
+  await db.transaction('rw', db.machineSettings, () => writeMachineSettings(exerciseId, fields, now))
+}
+
 /** Borrado suave: archivar o restaurar. */
 export async function setExerciseArchived(id: Id, archived: boolean, now: number = Date.now()): Promise<void> {
   const changed = await db.exercises.update(id, { archived: archived ? 1 : 0, updatedAt: now })

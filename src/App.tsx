@@ -1,9 +1,14 @@
 import { HashRouter, Navigate, Route, Routes, useParams } from 'react-router'
 import ExerciseForm from './features/exercises/ExerciseForm'
 import ExerciseList from './features/exercises/ExerciseList'
+import HistoryList from './features/history/HistoryList'
+import SessionDetail from './features/history/SessionDetail'
 import ProgressList from './features/progress/ProgressList'
 import Settings from './features/settings/Settings'
+import ActiveSession from './features/workout/ActiveSession'
+import ExercisePicker from './features/workout/ExercisePicker'
 import Home from './features/workout/Home'
+import LogExercise from './features/workout/LogExercise'
 import { TabLayout } from './ui/TabLayout'
 
 // HashRouter: hosting estático sin reescrituras de rutas.
@@ -17,6 +22,13 @@ export default function App() {
           <Route path="progress" element={<ProgressList />} />
           <Route path="settings" element={<Settings />} />
         </Route>
+
+        {/* Rutas secundarias, sin barra de pestañas. */}
+        <Route path="session/:id" element={<ActiveSession />} />
+        <Route path="session/:id/pick" element={<ExercisePicker />} />
+        <Route path="session/:id/ex/:sessionExerciseId" element={<LogExercise />} />
+        <Route path="history" element={<HistoryList />} />
+        <Route path="history/:sessionId" element={<SessionDetail />} />
         <Route path="exercises/new" element={<ExerciseForm />} />
         <Route path="exercises/:id/edit" element={<ExerciseForm />} />
         {/* El detalle del ejercicio llega en la Fase 4; mientras, se edita. */}

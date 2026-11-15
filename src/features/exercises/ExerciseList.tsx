@@ -4,6 +4,7 @@ import { EXERCISE_TYPE_LABELS, MUSCLE_GROUP_LABELS } from '../../domain/labels'
 import { type ExerciseFilter, filterExercises } from '../../domain/search'
 import { EXERCISE_TYPES, type ExerciseType, MUSCLE_GROUPS, type MuscleGroup } from '../../domain/types'
 import { Chip, ChipRow } from '../../ui/Chip'
+import { List, ListLink } from '../../ui/List'
 import { Page } from '../../ui/Page'
 import styles from './ExerciseList.module.css'
 
@@ -78,18 +79,16 @@ export default function ExerciseList() {
       </div>
 
       {exercises === undefined ? null : visible.length > 0 ? (
-        <ul className={styles.list}>
+        <List className={styles.list}>
           {visible.map((e) => (
-            <li key={e.id}>
-              <Link to={`/exercises/${e.id}/edit`} className={styles.item}>
-                <span className={styles.name}>{e.name}</span>
-                <span className={styles.meta}>
-                  {MUSCLE_GROUP_LABELS[e.muscleGroup]} · {EXERCISE_TYPE_LABELS[e.type]}
-                </span>
-              </Link>
-            </li>
+            <ListLink
+              key={e.id}
+              to={`/exercises/${e.id}/edit`}
+              title={e.name}
+              meta={`${MUSCLE_GROUP_LABELS[e.muscleGroup]} · ${EXERCISE_TYPE_LABELS[e.type]}`}
+            />
           ))}
-        </ul>
+        </List>
       ) : (
         <div className={styles.empty}>
           {filter.archived ? (

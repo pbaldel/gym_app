@@ -27,6 +27,7 @@ export function MachineSettingsFields({ value, onChange }: Props) {
               className={styles.cellInput}
               value={value[f.key] ?? ''}
               placeholder={f.placeholder}
+              aria-label={f.label}
               onChange={(e) => set(f.key, e.target.value)}
               autoComplete="off"
               enterKeyHint="next"
