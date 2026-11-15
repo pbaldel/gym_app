@@ -1,0 +1,4 @@
+/* Deja hueco para la TabBar fija y la barra de inicio del iPhone. */
+.content {
+  padding-bottom: calc(var(--tabbar-height) + env(safe-area-inset-bottom));
+}

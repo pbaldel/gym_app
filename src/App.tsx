@@ -1,9 +1,23 @@
-// Pantalla provisional hasta montar el router y la TabBar (Fase 0).
+import { HashRouter, Navigate, Route, Routes } from 'react-router'
+import ExerciseList from './features/exercises/ExerciseList'
+import ProgressList from './features/progress/ProgressList'
+import Settings from './features/settings/Settings'
+import Home from './features/workout/Home'
+import { TabLayout } from './ui/TabLayout'
+
+// HashRouter: hosting estático sin reescrituras de rutas.
 export default function App() {
   return (
-    <main style={{ padding: 24 }}>
-      <h1 style={{ margin: 0 }}>Gym Log</h1>
-      <p style={{ color: 'var(--text-muted)' }}>Base instalable lista.</p>
-    </main>
+    <HashRouter>
+      <Routes>
+        <Route element={<TabLayout />}>
+          <Route index element={<Home />} />
+          <Route path="exercises" element={<ExerciseList />} />
+          <Route path="progress" element={<ProgressList />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </HashRouter>
   )
 }

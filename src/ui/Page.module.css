@@ -1,0 +1,13 @@
+.page {
+  padding: 16px 16px 24px;
+}
+
+.title {
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.page p {
+  color: var(--text-muted);
+}
