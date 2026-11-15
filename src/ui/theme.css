@@ -5,6 +5,10 @@
   --text-muted: #9aa1b2;
   --accent: #4ade80;
   --border: #262a33;
+  --surface-2: #232733;
+  --on-accent: #062b12;
+  --danger: #f87171;
+  --radius: 12px;
   --tabbar-height: 56px;
 
   color-scheme: dark;

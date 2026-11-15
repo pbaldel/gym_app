@@ -1,0 +1,123 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.label,
+.legend {
+  padding: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.legend {
+  margin-bottom: 8px;
+}
+
+.input,
+.textarea,
+.cellInput {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input {
+  min-height: 52px;
+  padding: 0 16px;
+  font-size: 18px;
+}
+
+.textarea {
+  padding: 12px 16px;
+  resize: vertical;
+}
+
+.input::placeholder,
+.textarea::placeholder,
+.cellInput::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+.input[aria-invalid='true'] {
+  border-color: var(--danger);
+}
+
+.error {
+  color: var(--danger);
+  font-size: 14px;
+}
+
+/* Ajustes de máquina: cuadrícula 2×2 con valores grandes. */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 12px 10px;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.cellLabel {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.cellInput {
+  min-height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.banner {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.status {
+  min-height: 20px;
+  text-align: center;
+}
+
+.status:empty {
+  display: none;
+}
+
+.flash {
+  color: var(--accent);
+  font-weight: 600;
+}

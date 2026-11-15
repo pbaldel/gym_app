@@ -8,6 +8,17 @@
   font-weight: 700;
 }
 
+.back {
+  min-height: 44px;
+  margin: -8px 0 4px -8px;
+  padding: 0 8px;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-size: 17px;
+  cursor: pointer;
+}
+
 .page p {
   color: var(--text-muted);
 }

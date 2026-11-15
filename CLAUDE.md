@@ -23,6 +23,8 @@ PWA personal para registrar entrenamientos de fuerza en un iPhone 15 Pro (Safari
 
 Convenciones: los `id` son `crypto.randomUUID()` (string), para poder fusionar importaciones sin choques. Las fechas van en epoch ms (`number`), el peso en kg (`number`, admite decimales como 1,25) y el borrado es suave (`archived`) en el catálogo.
 
+`archived` se guarda como `0 | 1`, no como booleano: IndexedDB no indexa booleanos y el índice quedaría vacío. Lo mismo para cualquier campo booleano que se quiera indexar en el futuro.
+
 ```
 exercises        id, name, muscleGroup, type, archived, createdAt, updatedAt
                  + notes?
